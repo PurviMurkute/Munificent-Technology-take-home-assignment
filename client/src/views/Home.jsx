@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import CourseCard from "../components/CourseCard";
 
 const Home = () => {
@@ -16,7 +16,6 @@ const Home = () => {
       if (response.data.success) {
         setCourses(response.data.data);
         toast.success(response.data.message);
-        console.log(response.data.data);
       } else {
         toast.error(response.data.message);
       }
@@ -51,6 +50,7 @@ const Home = () => {
           })}
         </div>
       </div>
+      <Toaster/>
     </div>
   );
 };
