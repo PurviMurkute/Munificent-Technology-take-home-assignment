@@ -21,7 +21,7 @@ app.get('/health', async(req, res)=> {
     })
 })
 
-app.use('/student', studentRouter);
+app.use('/api', studentRouter);
 app.use('/api', courseRouter);
 
 app.listen(PORT, () => {
