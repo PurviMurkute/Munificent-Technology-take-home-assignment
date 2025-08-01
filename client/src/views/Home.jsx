@@ -29,11 +29,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0d0d0d] via-[#1a1a1a] to-[#0d0d0d]">
+    <div className="min-h-screen bg-[#0A2735]">
       <Header />
       <div className="flex flex-col justify-center items-center inset-0 absolute">
-        <h1 className="text-2xl font-extrabold py-3">Our Courses</h1>
-        <div className="flex flex-wrap">
+        <h1 className="text-2xl font-extrabold py-5 text-white">Our Courses</h1>
+        <div className="flex gap-3 flex-wrap">
           {courses.map((course, i) => {
             const { title, thumbnail, description, instructor, duration } =
               course;

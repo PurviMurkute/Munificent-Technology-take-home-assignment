@@ -20,6 +20,10 @@ const courseSchema = new Schema({
     duration: {
         type: String,
         required: true
+    },
+    students: {
+        type: [Schema.Types.ObjectId],
+        ref: "Student"
     }
 })
 

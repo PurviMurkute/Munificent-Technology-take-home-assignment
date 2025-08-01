@@ -46,11 +46,11 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0d0d0d] via-[#1a1a1a] to-[#0d0d0d] relative">
+    <div className="min-h-screen bg-[#0A2735] relative">
       <Header />
       <div className="flex flex-col justify-center items-center inset-0 absolute">
-        <div className="w-[400px] bg-[#4d4d4d] p-10 rounded-md shadow ">
-          <h1 className="text-center font-bold py-4">SignUp Now</h1>
+        <div className="w-[400px] bg-[#fff] p-10 rounded-md shadow ">
+          <h1 className="text-center font-bold py-4">SignIn Now</h1>
           <form className="flex flex-col gap-4">
             <Input
               type="text"
@@ -68,8 +68,9 @@ const SignIn = () => {
                 setSignIsStudent({ ...signInStudent, password: e.target.value })
               }
             />
-            <Button btnText="SignIn" variant="blue" onclick={SignIn} />
+            <Button btnText="SignIn" variant="orange" onclick={SignIn} />
           </form>
+          <p className="font-medium p-2">Don't have an account? <span className="text-blue-600 cursor-pointer" onClick={()=>navigate("/signup")}>SignUp Now</span></p>
         </div>
       </div>
       <Toaster/>

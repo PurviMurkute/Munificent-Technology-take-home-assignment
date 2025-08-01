@@ -5,36 +5,41 @@ import { useNavigate } from "react-router";
 import toast, { Toaster } from "react-hot-toast";
 
 const Header = () => {
-  const [student, setStudent] = useState("");
+  const [currentStudent, setCurrentStudent] = useState("");
 
   useEffect(() => {
-    const currentStudent = JSON.parse(localStorage.getItem("currentStudent"));
+    const currentstudent = JSON.parse(localStorage.getItem("currentStudent"));
 
-    if (currentStudent) {
-      setStudent(currentStudent);
+    if (currentstudent) {
+      setCurrentStudent(currentstudent);
     }
   }, []);
 
   const handleSignout = () => {
     localStorage.clear();
     toast.success("SignOut Successful");
+    window.location.reload();
   };
 
   const navigate = useNavigate();
   return (
-    <div className="fixed top-0 w-full py-3 px-5 z-10 bg-[#404040]">
+    <div className="fixed top-0 w-full py-3 px-5 z-10 bg-[#fff]">
       <div className="flex justify-between">
-        <div className="flex justify-center items-center gap-2">
-          <SiSololearn className="text-2xl" />
-          <p className="text-xl font-bold">Learning Academy</p>
+        <div className="flex justify-center items-center gap-2" onClick={()=>{navigate("/")}}>
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D0BAQHghzGsggOR9g/company-logo_100_100/B4DZV0US.fHkAQ-/0/1741413232954/munificent_technology_services_logo?e=1756944000&v=beta&t=qQ7sp42I3wmlMLu0I7EJKj28RLYdL1E9A2ne1QE5jeE"
+            alt="logo"
+            className="w-[30px]"
+          />
+          <p className="text-xl font-bold text-[#0A2735]">Valenta Learning Academy</p>
         </div>
         <div className="flex justify-center items-center gap-3 ">
-          {!student ? (
+          {!currentStudent ? (
             <>
               <Button
                 btnText="SignIn"
                 icon="signin"
-                variant="blue"
+                variant="orange"
                 onclick={() => {
                   navigate("/signin");
                 }}
@@ -42,7 +47,7 @@ const Header = () => {
               <Button
                 btnText="SignUp"
                 icon="signup"
-                variant="blue"
+                variant="black"
                 onclick={() => {
                   navigate("/signup");
                 }}
@@ -50,14 +55,12 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Button btnText="My Enrolled Courses" variant="blue" />
+              <Button btnText="My Enrolled Courses" variant="black" />
               <Button
                 btnText="SignOut"
                 icon="signup"
-                variant="red"
-                onclick={() => {
-                  handleSignout;
-                }}
+                variant="orange"
+                onclick={handleSignout}
               />
             </>
           )}
