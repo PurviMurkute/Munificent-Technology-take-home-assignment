@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import connDB from './config/db.js';
 import studentRouter from './routes/studentRoutes.js';
+import courseRouter from './routes/courseRoutes.js';
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get('/health', async(req, res)=> {
 })
 
 app.use('/student', studentRouter);
+app.use('/api', courseRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);
