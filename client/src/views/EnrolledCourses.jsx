@@ -20,12 +20,11 @@ const EnrolledCourses = () => {
   }, []);
   const navigate = useNavigate();
   const JWT = JSON.parse(localStorage.getItem("JwtToken"));
-  console.log(currentStudent?._id);
 
   const enrolledCourses = async () => {
 
     if(!currentStudent._id) return;
-    
+
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/enrollments/${currentStudent?._id}`,

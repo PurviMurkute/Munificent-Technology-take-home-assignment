@@ -151,14 +151,6 @@ const Header = () => {
                   </p>
                 </div>
               )}
-              {/* <Button btnText="My Enrolled Courses" variant="orange" btnSize="sm" onclick={()=>{navigate("/enrolled")}}/>
-              <Button
-                btnText="SignOut"
-                icon="signup"
-                variant="orange"
-                btnSize="sm"
-                onclick={handleSignout}
-              /> */}
             </div>
           )}
         </div>
