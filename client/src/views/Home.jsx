@@ -7,6 +7,10 @@ import homeImg from "../assets/homeimg.png";
 import Button from "../components/Button";
 import featuresData from "../components/FeaturesData";
 import Features from "../components/Features";
+import instructorsData from "../components/InstructorsData";
+import InstructorsCard from "../components/InstructorsCard";
+import Footer from "../components/Footer";
+import { Link } from "react-scroll";
 
 const Home = () => {
   const [courses, setCourses] = useState([]);
@@ -44,7 +48,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="h-[600px] bg-[#0A2735] mt-10 relative">
+      <div id="home" className="h-[600px] bg-[#0A2735] mt-10 relative">
         <div className="flex justify-center items-center gap-5 inset-0 mx-auto w-[75%] absolute">
           <div className="">
             <h2 className="text-3xl font-extrabold text-[#fff] my-3">
@@ -55,19 +59,21 @@ const Home = () => {
               in real-world scenarios. Learn by doing, and gain the confidence
               to turn skills into success.
             </p>
-            <Button
-              btnText="Explore Our Courses"
-              variant="orange"
-              icon="explore"
-              btnSize="md"
-            />
+            <Link to="courses" smooth={true} duration={500}>
+              <Button
+                btnText="Explore Our Courses"
+                variant="orange"
+                icon="explore"
+                btnSize="md"
+              />
+            </Link>
           </div>
           <div className="">
             <img src={homeImg} alt="Homg-img" className="w-[700px]" />
           </div>
         </div>
       </div>
-      <div className="bg-[#fff] p-15">
+      <div id="features" className="bg-[#fff] p-15">
         <h2 className="text-center text-2xl font-bold text-[#0A2735]">
           Our Features
         </h2>
@@ -85,7 +91,7 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div className="bg-[#d9d9d9] p-10">
+      <div id="courses" className="bg-[#d9d9d9] p-10">
         <h1 className="text-2xl font-extrabold py-5 text-[#0A2735] text-center">
           Our Courses
         </h1>
@@ -115,6 +121,26 @@ const Home = () => {
           })}
         </div>
       </div>
+      <div id="instructors" className="bg-[#fff] p-10">
+        <h2 className="text-2xl font-extrabold py-5 text-[#0A2735] text-center">
+          Our Instructors
+        </h2>
+        <div className="flex gap-3 flex-wrap justify-center">
+          {instructorsData.map((instructor, i) => {
+            const { image, name, email } = instructor;
+
+            return (
+              <InstructorsCard
+                key={i}
+                image={image}
+                name={name}
+                email={email}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <Footer />
       <Toaster />
     </>
   );
