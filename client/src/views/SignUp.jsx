@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router";
+import Footer from "../components/Footer";
 
 const SignUp = () => {
   const [student, setStudent] = useState({
@@ -44,8 +45,8 @@ const SignUp = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-[#0A2735] flex flex-col justify-center items-center inset-0 absolute">
-        <div className="w-[450px] bg-[#fff] p-10 rounded-md shadow ">
+      <div className="min-h-screen bg-[#d9d9d9] p-2 flex flex-col justify-center items-center inset-0">
+        <div className="md:w-[450px] bg-[#fff] p-4 md:p-10 rounded-md shadow ">
           <h1 className="text-center font-bold py-4">SignUp Now</h1>
           <form className="flex flex-col gap-3">
             <Input
@@ -73,6 +74,7 @@ const SignUp = () => {
           <p className="font-medium p-2">Already have an account? <span className="text-blue-600 cursor-pointer" onClick={()=>navigate("/signin")}>SignIn Now</span></p>
         </div>
       </div>
+      <Footer/>
       <Toaster/>
     </>
   );

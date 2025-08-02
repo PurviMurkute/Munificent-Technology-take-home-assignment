@@ -15,7 +15,11 @@ const Header = () => {
 
   const location = useLocation();
 
-  const isEnrolled = location.pathname.startsWith("/enrolled");
+  const isNavItemProtected = ["/enrolled", "/signin", "/signup"];
+
+  const isNotHome = isNavItemProtected.some((path) =>
+    location.pathname.startsWith(path)
+  );
 
   useEffect(() => {
     const currentstudent = JSON.parse(localStorage.getItem("currentStudent"));
@@ -51,61 +55,76 @@ const Header = () => {
           </p>
         </div>
         <div className={`flex justify-center items-center gap-3`}>
-          {!isEnrolled ? (<div className={`hidden md:flex gap-4 font-bold me-2`}>
-            <Link
-              to="/"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-orange-600 transition-transform duration-150"
-            >
-              Home
-            </Link>
-            <Link
-              to="features"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-orange-600 transition-transform duration-150"
-            >
-              Features
-            </Link>
-            <Link
-              to="courses"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-orange-600 transition-transform duration-150"
-            >
-              Courses
-            </Link>
-            <Link
-              to="instructors"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-orange-600 transition-transform duration-150"
-            >
-              Instructors
-            </Link>
-          </div>) : null}
-          
+          {!isNotHome ? (
+            <div className={`hidden md:flex gap-4 font-bold me-2`}>
+              <Link
+                to="/"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-orange-600 transition-transform duration-150"
+              >
+                Home
+              </Link>
+              <Link
+                to="features"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-orange-600 transition-transform duration-150"
+              >
+                Features
+              </Link>
+              <Link
+                to="courses"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-orange-600 transition-transform duration-150"
+              >
+                Courses
+              </Link>
+              <Link
+                to="instructors"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:text-orange-600 transition-transform duration-150"
+              >
+                Instructors
+              </Link>
+            </div>
+          ) : null}
+
           {!currentStudent ? (
             <>
-              <Button
-                btnText="SignIn"
-                icon="signin"
-                variant="orange"
-                btnSize="sm"
-                onclick={() => {
-                  navigate("/signin");
-                }}
-              />
-              <Button
-                btnText="SignUp"
-                icon="signup"
-                variant="orange"
-                btnSize="sm"
-                onclick={() => {
-                  navigate("/signup");
-                }}
-              />
+              <div className="hidden md:flex gap-2">
+                <Button
+                  btnText="SignIn"
+                  icon="signin"
+                  variant="orange"
+                  btnSize="sm"
+                  onclick={() => {
+                    navigate("/signin");
+                  }}
+                />
+                <Button
+                  btnText="SignUp"
+                  icon="signup"
+                  variant="black"
+                  btnSize="sm"
+                  onclick={() => {
+                    navigate("/signup");
+                  }}
+                />
+              </div>
+              <div className="block md:hidden">
+                <Button
+                  btnText="Let's Start"
+                  btnSize="sm"
+                  icon="signin"
+                  variant="black"
+                  onclick={() => {
+                    navigate("/signup");
+                  }}
+                />
+              </div>
             </>
           ) : (
             <div className="relative">
