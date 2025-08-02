@@ -12,28 +12,28 @@ const featuresData = [
         icon: <SiSololearn />,
     },
     {
-        title: "Easy Course Enrollment",
-        description: "Browse and enroll in any course with just one click — no hassle, no confusion.",
+        title: "Expert Instructors",
+        description: "Learn from experienced professionals and subject matter experts.",
         icon: <SiExpertsexchange />,
     },
     {
-        title: "Easy Course Enrollment",
-        description: "Browse and enroll in any course with just one click — no hassle, no confusion.",
+        title: "Diverse Course Catalog",
+        description: "Explore a wide range of courses - from C, C++, and DSA to Full Stack Development.",
         icon: <PiFediverseLogoDuotone />,
     },
     {
-        title: "Easy Course Enrollment",
-        description: "Browse and enroll in any course with just one click — no hassle, no confusion.",
+        title: "Responsive & Mobile-Friendly",
+        description: "Access your learning on any device, anytime, anywhere.",
         icon: <MdOutlineMobileFriendly />,
     },
     {
-        title: "Easy Course Enrollment",
-        description: "Browse and enroll in any course with just one click — no hassle, no confusion.",
+        title: "Secure Authentication",
+        description: "Your data is safe with us - secure sign-up and JWT-based login system.",
         icon: <GrSecure />,
     },
     {
-        title: "Easy Course Enrollment",
-        description: "Browse and enroll in any course with just one click — no hassle, no confusion.",
+        title: "Lifetime Access",
+        description: "Once enrolled, your course materials are always accessible.",
         icon: <AiOutlineSafetyCertificate />,
     }
 ]
