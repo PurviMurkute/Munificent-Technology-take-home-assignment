@@ -53,6 +53,15 @@ const CourseCard = ({
     }
   };
 
+  const handleEnroll = async () => {
+    if (currentStudent && currentStudent._id) {
+      await enrollCourse();
+      navigate("/enrolled");
+    } else {
+      toast.error("Please sign up to enroll");
+    }
+  };
+
   return (
     <div className="md:w-[400px] bg-[#fff] p-5 rounded-md shadow">
       <img
@@ -76,15 +85,12 @@ const CourseCard = ({
             ? "opacity-50 cursor-not-allowed"
             : "opacity-100 cursor-pointer"
         }`}
-        onClick={async () => {
-          await enrollCourse();
-          navigate("/enrolled");
-        }}
+        onClick={handleEnroll}
         disabled={isEnrolled}
       >
         {isEnrolled ? "Already Enrolled" : "Enroll Now"}
       </button>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };

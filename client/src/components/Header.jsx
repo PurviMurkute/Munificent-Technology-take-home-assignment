@@ -32,7 +32,9 @@ const Header = () => {
   const handleSignout = () => {
     localStorage.clear();
     toast.success("SignOut Successful");
-    window.location.reload();
+    setTimeout(()=>{
+      navigate("/");
+    }, 2000)
   };
 
   const navigate = useNavigate();
