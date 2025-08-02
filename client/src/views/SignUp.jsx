@@ -42,9 +42,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A2735] relative">
+    <>
       <Header />
-      <div className="flex flex-col justify-center items-center inset-0 absolute">
+      <div className="min-h-screen bg-[#0A2735] flex flex-col justify-center items-center inset-0 absolute">
         <div className="w-[450px] bg-[#fff] p-10 rounded-md shadow ">
           <h1 className="text-center font-bold py-4">SignUp Now</h1>
           <form className="flex flex-col gap-3">
@@ -68,13 +68,13 @@ const SignUp = () => {
                 setStudent({ ...student, password: e.target.value })
               }
             />
-            <Button btnText="SignUp" variant="orange" onclick={signUp}/>
+            <Button btnText="SignUp" variant="orange" btnSize="sm" onclick={signUp}/>
           </form>
           <p className="font-medium p-2">Already have an account? <span className="text-blue-600 cursor-pointer" onClick={()=>navigate("/signin")}>SignIn Now</span></p>
         </div>
       </div>
       <Toaster/>
-    </div>
+    </>
   );
 };
 

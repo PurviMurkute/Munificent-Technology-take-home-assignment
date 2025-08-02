@@ -112,7 +112,7 @@ const getEnrolledCoursesByStudent = async (req, res) => {
     return res.status(200).json({
       success: true,
       data: enrollments,
-      message: "Enrolled course fetched successfully",
+      message: "Enrolled courses fetched successfully",
     });
   } catch (e) {
     return res.status(400).json({
