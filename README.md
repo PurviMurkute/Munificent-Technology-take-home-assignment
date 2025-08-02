@@ -35,9 +35,8 @@ A full-stack course learning platform where students can explore, enroll, and le
 
 Follow these steps to run the project on your local machine.
 
-### 1. Clone the repository
+###  Clone the repository
 
-```bash
 git clone https://github.com/PurviMurkute/Munificent-Technology-take-home-assignment.git
 
 ## Backend Setup
