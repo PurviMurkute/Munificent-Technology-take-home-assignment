@@ -2,6 +2,9 @@
 
 A full-stack course learning platform where students can explore, enroll, and learn various tech courses like DSA, Full Stack Development, AWS, and DevOps.
 
+### 🔐 Home Page
+![Home Page](./client/src/assets/homepage.png)
+
 ## 🚀 Features
 
 - Student Authentication (Signup/Login)
@@ -62,7 +65,7 @@ npm install
 
 ## 📬 Contact
 
-- 🔗 [LinkedIn](https://www.linkedin.com/in/purvi-murkute-72b914234)
-- 📧 Email: purvimurkute123@gmail.com
-- 💼 [Portfolio](https://purvi-portfolio.netlify.app)
-- 🧑‍💻 [Peerlist](https://peerlist.io/purvimurkute)
+![LinkedIn](https://www.linkedin.com/in/purvi-murkute-72b914234)
+Email: purvimurkute123@gmail.com
+![Portfolio](https://purvi-portfolio.netlify.app)
+![Peerlist](https://peerlist.io/purvimurkute)
