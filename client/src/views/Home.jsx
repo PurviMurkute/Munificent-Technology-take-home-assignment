@@ -64,7 +64,7 @@ const Home = () => {
                 btnText="Explore Our Courses"
                 variant="orange"
                 icon="explore"
-                btnSize="md"
+                btnSize="lg"
               />
             </Link>
           </div>

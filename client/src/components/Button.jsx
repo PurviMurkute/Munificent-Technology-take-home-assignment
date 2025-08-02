@@ -17,7 +17,8 @@ const Button = ({ btnText, onclick, icon, variant, btnSize }) => {
 
   const buttonSize = {
     sm: "px-4 py-1",
-    md: "px-5 py-2 w-[250px]"
+    md: "px-5 py-2 w-[250px] block mx-auto",
+    lg: "px-5 py-3 w-[250px]"
   }
 
   return (

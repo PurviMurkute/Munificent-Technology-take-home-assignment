@@ -60,8 +60,8 @@ const EnrolledCourses = () => {
         </h1>
         {enrollments.length === 0 ? (
           <>
-          <p className="text-2xl font-bold text-red-500 py-5">No courses enrolled yet</p>
-          <Button btnText="Enroll Now" variant="orange" onclick={()=>{navigate("/")}} />
+          <p className="text-2xl font-bold text-red-500 py-5 text-center">No courses enrolled yet</p>
+          <Button btnText="Enroll Now" variant="orange" btnSize="md" onclick={()=>{navigate("/")}} />
           </>
         ) : (
           <div className="flex gap-3 px-2 py-3 flex-wrap justify-center">
