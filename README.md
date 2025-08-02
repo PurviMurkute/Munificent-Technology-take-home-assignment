@@ -64,7 +64,11 @@ npm install
 
 ## 📬 Contact
 
+### LinkedIn
 ![LinkedIn](https://www.linkedin.com/in/purvi-murkute-72b914234)
+### Email
 Email: purvimurkute123@gmail.com
+### Portfolio
 ![Portfolio](https://purvi-portfolio.netlify.app)
+### Peerlist
 ![Peerlist](https://peerlist.io/purvimurkute)
