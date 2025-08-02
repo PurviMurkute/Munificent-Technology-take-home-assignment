@@ -8,8 +8,8 @@ import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
-    <div className="flex px-20 py-5 bg-[#0A2735] text-white bottom-0 w-full justify-center gap-5 items-center mx-auto">
-      <div className="flex flex-col w-[450px]">
+    <div className="flex flex-col md:flex-row px-5 md:px-20 py-5 bg-[#0A2735] text-white bottom-0 w-full justify-start md:justify-center gap-5 md:items-center mx-auto">
+      <div className="flex flex-col md:w-[450px]">
         <img
           src="https://valenta.io/wp-content/uploads/elementor/thumbs/Wtlogo-r3r6p1igplluslxg8hmblwllpjq3pnafadde93xd46.png"
           alt="logo"
@@ -20,7 +20,7 @@ const Footer = () => {
           in-demand skills.
         </p>
       </div>
-      <div className="flex flex-col gap-2 w-[400px]">
+      <div className="flex flex-col gap-2 md:w-[400px]">
         <h4 className="font-semibold text-xl py-2">Quick Links</h4>
         <div className="flex flex-col gap-2">
           <Link to="home" smooth={true} duration={500}>
@@ -34,7 +34,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col gap-2 w-[400px]">
+      <div className="flex flex-col gap-2 md:w-[400px]">
         <h4 className="font-semibold text-xl py-2">Contact Information</h4>
         <div className="flex flex-col gap-2">
           <a href="mailto:munificenttech@gmail.com" className="cursor-pointer px-2 rounded hover:bg-gray-500 transition-transform duration-150">
@@ -51,7 +51,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="flex flex-col gap-2 w-[400px]">
+      <div className="flex flex-col gap-2 md:w-[400px]">
         <h4 className="font-semibold text-xl py-2">
           Follow Us on Social Media
         </h4>

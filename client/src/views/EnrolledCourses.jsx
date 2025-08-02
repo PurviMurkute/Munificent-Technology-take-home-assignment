@@ -5,6 +5,7 @@ import axios from "axios";
 import Button from "../components/Button";
 import { useNavigate } from "react-router";
 import CourseCard from "../components/CourseCard";
+import Footer from "../components/Footer";
 
 const EnrolledCourses = () => {
   const [currentStudent, setCurrentStudent] = useState({});
@@ -19,11 +20,13 @@ const EnrolledCourses = () => {
   }, []);
   const navigate = useNavigate();
   const JWT = JSON.parse(localStorage.getItem("JwtToken"));
+  console.log(currentStudent?._id);
   
+    
   const enrolledCourses = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/enrollments/${currentStudent._id}`,
+        `${import.meta.env.VITE_API_URL}/enrollments/${currentStudent?._id}`,
         {
           headers: {
             Authorization: `Bearer ${JWT}`,
@@ -50,8 +53,8 @@ const EnrolledCourses = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-[#0A2735]">
-        <h1 className="text-2xl font-extrabold py-5 text-white mt-10 text-center">
+      <div className="min-h-screen bg-[#d9d9d9]">
+        <h1 className="text-2xl font-extrabold py-5 text-[#0A2735] mt-10 text-center">
           Your Enrolled Courses {currentStudent.name} 
         </h1>
         {enrollments.length === 0 ? (
@@ -60,7 +63,7 @@ const EnrolledCourses = () => {
           <Button btnText="Enroll Now" variant="orange" onclick={()=>{navigate("/")}} />
           </>
         ) : (
-          <div className="flex gap-3 flex-wrap justify-center">
+          <div className="flex gap-3 px-2 py-3 flex-wrap justify-center">
             {enrollments.map((course, i) => {
               const {_id,  title, thumbnail, description, instructor, duration } =
                 course;
@@ -80,6 +83,7 @@ const EnrolledCourses = () => {
           </div>
         )}
       </div>
+      <Footer/>
       <Toaster />
     </>
   );

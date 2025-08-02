@@ -73,8 +73,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div id="features" className="bg-[#fff] p-15">
-        <h2 className="text-center text-2xl font-bold text-[#0A2735]">
+      <div id="features" className="bg-[#fff] py-10 px-2 md:p-15">
+        <h2 className="text-center text-2xl font-bold text-[#0A2735] py-3">
           Our Features
         </h2>
         <div className="flex flex-wrap justify-center items-center">
@@ -91,7 +91,7 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div id="courses" className="bg-[#d9d9d9] p-10">
+      <div id="courses" className="bg-[#d9d9d9] py-10 px-2 md:p-10">
         <h1 className="text-2xl font-extrabold py-5 text-[#0A2735] text-center">
           Our Courses
         </h1>
@@ -121,7 +121,7 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div id="instructors" className="bg-[#fff] p-10">
+      <div id="instructors" className="bg-[#fff] py-10 px-2 md:p-10">
         <h2 className="text-2xl font-extrabold py-5 text-[#0A2735] text-center">
           Our Instructors
         </h2>

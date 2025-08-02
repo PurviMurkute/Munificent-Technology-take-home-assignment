@@ -54,7 +54,7 @@ const CourseCard = ({
   };
 
   return (
-    <div className="w-[400px] bg-[#fff] p-5 rounded-md shadow">
+    <div className="md:w-[400px] bg-[#fff] p-5 rounded-md shadow">
       <img
         src={thumbnail}
         alt="course-img"
